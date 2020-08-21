@@ -6,6 +6,13 @@ var fs = require("fs");
 //take user input
 var inquirer = require('inquirer');
 
+//this is long and won't change, so it's being stored in a const
+const tableOfContent = "## Table of Contents \n- [Description](#description) \n- [Installation](#installation) \n- [Usage](#usage) \n- [License](#license) \n- [Tests](#tests) \n- [Contributions](#contributions) \n- [Questions](#questions)\n\n";
+
+function createGitHubLink(userName){
+  return `https://github.com/${userName}`;
+}
+
 //holds the links to the badges in Markdown
 const licenseBadges = {
   openSource: "[![License: ODbL](https://img.shields.io/badge/License-ODbL-brightgreen.svg)](https://opendatacommons.org/licenses/odbl/)",
@@ -80,25 +87,41 @@ inquirer
       }else{
         var pageContent = "";
 
-        // switch(answer.license){
-        //   case "Open Source":
-        //     pageContent += licenseBadges.openSource;
-        //     break;
-        // }
+        //adds badge to page
+        switch(answer.license){
+          case "Open Source":
+            pageContent += licenseBadges.openSource;
+            break;
+          case "Public Domain":
+            pageContent += licenseBadges.publicDomain;
+            break;
+          case "MIT License":
+            pageContent += licenseBadges.mit;
+            break;
+          case "Apache License":
+            pageContent += licenseBadges.apache;
+            break;
+          case "GPL License":
+            pageContent += licenseBadges.gpl;
+            break;
+        }
 
-        pageContent += `# ${answer.title}\n\n`;
+        pageContent += `\n# ${answer.title}\n\n`;
+        pageContent += tableOfContent + "\n\n";
         pageContent += `## Description \n${answer.description}\n\n`;
-        pageContent += `## How To Install \n${answer.installation}\n\n`;
-        pageContent += `## Usage`
+        pageContent += `## Installation \n${answer.installation}\n\n`;
+        pageContent += `## Usage \n${answer.usage}\n\n`;
+        pageContent += `## License \n${answer.license}\n\n`;
+        pageContent += `## Tests \n${answer.tests}\n\n`;
+        pageContent += `## Contributions \n${answer.contribute}\n\n`;
+        pageContent += `## Questions \nIf you have any questions, you can contact me [Through GitHub](${createGitHubLink(answer.github)})\n`;
+        pageContent += `## Or through my email: ${answer.email}`;
         
         fs.appendFile(readme, pageContent, () =>{
 
         });
       }
     });
-    // console.log(answers.title);
-    // console.log(answers.description);
-    // console.log(answers.installation);
   })
   .catch(error => {
     if(error.isTtyError) {
