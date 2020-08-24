@@ -106,6 +106,7 @@ inquirer
             break;
         }
 
+        //adds content to page
         pageContent += `\n# ${answer.title}\n\n`;
         pageContent += tableOfContent + "\n\n";
         pageContent += `## Description \n${answer.description}\n\n`;
@@ -117,16 +118,9 @@ inquirer
         pageContent += `## Questions \nIf you have any questions, you can contact me [Through GitHub](${createGitHubLink(answer.github)})\n`;
         pageContent += `## Or through my email: ${answer.email}`;
         
-        fs.appendFile(readme, pageContent, () =>{
-
+        fs.appendFile(readme, pageContent, err =>{ 
+          err ? console.log(err) : console.log("File Generated");
         });
       }
     });
-  })
-  .catch(error => {
-    if(error.isTtyError) {
-      // Prompt couldn't be rendered in the current environment
-    } else {
-      // Something else when wrong
-    }
   });
