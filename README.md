@@ -16,11 +16,11 @@ Once Node.js is installed and the files for this program have been downloaded, n
 
 This program uses the Inquirer Node Module, so before you can start using the Generator, you'll need to run the following line in your CLI:
 
-[npm init](./Screenshots/1npminit.png)
-[npm i inquirer](./Screenshots/2npmiinquirer.png)
+![npm init](./Screenshots/1npminit.png)
+![npm i inquirer](./Screenshots/2npmiinquirer.png)
 
 You should then have a folder with the following contents:
-[Files](./Screenshots/0files.png)
+![Files](./Screenshots/0files.png)
 
 You are now free to use the README Generator!
 
@@ -30,32 +30,32 @@ You are now free to use the README Generator!
 Start by navigating to the program's Parent Directory via the CLI.
 
 Once there, run the following line of code to start the program;
-[node index.js](./Screenshots/3nodeindexjs.png)
+![node index.js](./Screenshots/3nodeindexjs.png)
 
 **First** enter the name of the program the README is for.
-[program name](./Screenshots/4programname.png)
+![program name](./Screenshots/4programname.png)
 
 **Second** enter a description of the program.
-[description](./Screenshots/5programdescription.png)
+![description](./Screenshots/5programdescription.png)
 
 **Third** explain how to install your program.
-[Installation Instructions](./Screenshots/6installationinstructions.png)
+![Installation Instructions](./Screenshots/6installationinstructions.png)
 
 **Fourth** explain how to use this program.
-[Usage](./Screenshots/7usage.png)
+![Usage](./Screenshots/7usage.png)
 
 **Fifth** select with type of license the program has, from the list provided.
-[License](./Screenshots/8liscensetype.png)
+![License](./Screenshots/8liscensetype.png)
 
 **Sixth** list any areas or features of the app that are still in buggy, or are otherwise in development.
-[Tests](./Screenshots/9test.png)
+![Tests](./Screenshots/9test.png)
 
 **Seventh** explain how someone could contribute to this app is they so choose.
-[Contributions](./Screenshots/10contribution.png)
+![Contributions](./Screenshots/10contribution.png)
 
 **Eighth** enter yout contact information: your GitHub username, followed by your email address.
-[GitHub](./Screenshots/11github.png)
-[email](./Screenshots/12email.png)
+![GitHub](./Screenshots/11github.png)
+![email](./Screenshots/12email.png)
 
 **Finally** after all the above steps have been followed, you should see the following message:
 [File Generated](./Screenshots/13success.png)
