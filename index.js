@@ -106,19 +106,34 @@ inquirer
             break;
         }
 
-        //adds content to page
-        pageContent += `\n# ${answer.title}\n\n`;
-        pageContent += tableOfContent + "\n\n";
-        pageContent += `## Description \n${answer.description}\n\n`;
-        pageContent += `## Installation \n${answer.installation}\n\n`;
-        pageContent += `## Usage \n${answer.usage}\n\n`;
-        pageContent += `## License \n${answer.license}\n\n`;
-        pageContent += `## Tests \n${answer.tests}\n\n`;
-        pageContent += `## Contributions \n${answer.contribute}\n\n`;
-        pageContent += `## Questions \nIf you have any questions, you can contact me [Through GitHub](${createGitHubLink(answer.github)})\n`;
-        pageContent += `## Or through my email: ${answer.email}`;
+        var printToPage = `${pageContent}
+        # ${answer.title}
         
-        fs.appendFile(readme, pageContent, err =>{ 
+        ${tableOfContent}
+        
+        ## Description
+        ${answer.description}
+        
+        ## Installation
+        ${answer.installation}
+        
+        ## Usage
+        ${answer.usage}
+        
+        ## License 
+        ${answer.license}
+        
+        ## Tests 
+        ${answer.tests}
+        
+        ## Contributions
+        ${answer.contribute}
+        
+        ## Questions
+        If you have any questions, you can contact me [Through GitHub](${createGitHubLink(answer.github)})
+        ## Or through my email: ${answer.email}`
+        
+        fs.appendFile(readme, printToPage, err =>{ 
           err ? console.log(err) : console.log("File Generated");
         });
       }

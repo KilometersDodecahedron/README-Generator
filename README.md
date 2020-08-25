@@ -5,6 +5,8 @@
 ## Description
 This program is designed to take in user input via the Command Line Interface (CLI) in order to generate a properly formatted "README" file.
 
+[Click here to see a video tutorial](https://youtu.be/C3lQWJFi8cg)
+
 ***
 
 ## Setup
@@ -84,10 +86,14 @@ The README.md file will look something like this:
 It takes all your hopes and dreams, and makes them a reality. It does this through the power of JavaScript and Pepsi Cola.
 
 ## Installation 
-Enter the directory what contains the files for the program via your Command Line Interface, then enter the following commands: \nnpm init \nnpm i icecreambath
+Enter the directory what contains the files for the program via your Command Line Interface, then enter the following commands: 
+npm init 
+npm i icecreambath
 
 ## Usage 
-The Super Awesome Program is run through the CLI. Enter the directory of the program, and enter the command: \nnode superAwesome.js \n(Note: Must have Node installed to run)
+The Super Awesome Program is run through the CLI. Enter the directory of the program, and enter the command: 
+node superAwesome.js 
+(Note: Must have Node installed to run)
 
 ## License 
 Open Source
